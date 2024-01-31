@@ -3,6 +3,7 @@ RUN echo '' > /etc/apk/repositories && \
     echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.19/main"         >> /etc/apk/repositories && \
     echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.19/community"    >> /etc/apk/repositories && \
     echo "Asia/Shanghai" > /etc/timezone
+RUN apk update && apk add --no-cache curl
 WORKDIR /build
 ENV CGO_ENABLED=0
 COPY . .
